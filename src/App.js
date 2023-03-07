@@ -2,13 +2,15 @@
 import './App.css';
 import {useState} from "react"
 import axios from "axios"
-import BookMark from './components/bookmark'
+// import BookMark from './components/bookmark'
+import {useNavigate} from "react-router-dom"
 
 
-function App() {
+function App(props) {
   const [images,setImages]=useState([])
   const [query, setQuery]=useState("")
-  const [bookmark, setBookmark]=useState([])
+  // const [bookmark, setBookmark]=useState([])
+  const navigate=useNavigate()
 
   const handleImage=()=>{
       axios({
@@ -23,28 +25,27 @@ function App() {
     }
   const handleBookmark=(e)=>{
     console.log(e.target.name)
-    setBookmark([...bookmark,e.target.name])
+    
+    props.setBookmark([...props.bookmark,e.target.name])
+    alert("Image has been added to your Book Mark list")
   }
-  const allBookmarks=()=>{
-    console.log(bookmark)
-    bookmark.map((data,i)=>{
-      return(
-        <div>
-          <img src={data} key={i} alt=""></img>
-        </div>
-      )
-    })
-  }
+  
 
   return (
     <>
+    <marquee width="100%" direction="right" height="30px">
+       * Click on images which you want to add to your favorite list. *
+      </marquee>
       <div className='parent'>
         <div className='header'>
         <h1>React Photo Search</h1>
-        <p href=''>bookmarks</p>
+        
         </div>
+        <div className='flex'>
+        <span onClick={()=>navigate("/bookmark")} className='p'>bookmarks</span>
         <input value={query} onChange={(e)=>setQuery(e.target.value)}></input>
         <button onClick={handleImage}>Search</button>
+        </div>
         <div className='imgcard'>
           {
             images.map((val,idx)=>{

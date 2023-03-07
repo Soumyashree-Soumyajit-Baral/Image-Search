@@ -1,0 +1,14 @@
+.head{
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(244, 6, 188);
+}
+/* .image:hover:after{
+    content:"Remove";
+    border-radius: 5px;
+    background-color: red;
+    font-weight: bolder;
+    margin-left: 10px;
+
+} */

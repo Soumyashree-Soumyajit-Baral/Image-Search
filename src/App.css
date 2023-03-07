@@ -3,13 +3,14 @@ span{
 }
 .parent{
   position: absolute;
-  left: 25%;
+  left: 20%;
   align-items: center;
 }
 img{
   width:200px;
   height: 200px;
   margin: 20px;
+  cursor: pointer;
 }
 .imgcard{
   display: grid;
@@ -24,6 +25,7 @@ input{
   width: 550px;
   height: 30px;
   margin-left: 11px;
+  border-radius: 8px;
 }
 button{
   height: 33px;
@@ -32,16 +34,25 @@ button{
   color: white;
   font-weight: bolder;
   margin-left: 10px;
+  cursor: pointer;
+  border-radius: 8px;
 }
-p{
+.p{
   background-color: black;
   color: white;
-  position: absolute;
-  left:80%;
-  top:2%;
   height: 33px;
   width: 110px;
-  padding-left: 35px;
+  padding-left: 30px;
   cursor: pointer;
   font-weight: bolder;
+  border-radius: 8px;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+
+}
+marquee{
+  font-weight: bolder;
+  color: blue;
 }
